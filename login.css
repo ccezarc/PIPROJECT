@@ -1,0 +1,188 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #282828;
+    background-image: url('imagens/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden; 
+    color: #dfdfdf;
+}
+
+.flip-container {
+    perspective: 1000px;
+    width: 550px; 
+    height: 550px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+    transform-origin: center;
+}
+
+.flipper.flipped {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; 
+    backdrop-filter: blur(4px);
+}
+
+.front {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.back {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: rotateY(180deg);
+}
+
+.input-field {
+    margin: 10px 0;
+    padding: 10px;
+    width: 80%;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.687);
+    color: #ffffff;
+    border: none;
+    letter-spacing: 1px;
+    
+
+}
+
+.input-field:hover {
+    margin: 10px 0;
+    padding: 10px;
+    width: 80%;
+    border-radius: 5px;
+    
+    background: rgba(0, 0, 0, 0.911);
+    color: #fff;
+
+}
+.button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    color: #000;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background 0.3s ease;
+    border-radius: 50px;
+    background: linear-gradient(145deg,#ffffff,#b6b3b3);
+    box-shadow:   0px 4px 10px #0000009e,
+                -20px -20px 60px #ffffff3c;
+    color: #000;
+    border: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: linear-gradient(145deg, #6a2121, #ff5252);
+    box-shadow: 20px 20px 60px #d9d9d950,
+                -20px -20px 60px #ffffff35;
+}
+
+.toggle-button {
+    cursor: pointer;
+    color: #e3d8d6;
+    margin-top: 50px;
+}
+
+.icon-button {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 50px;
+    height: 50px; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0; 
+    border-radius: 50%;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    position: absolute; 
+    top: 60px;
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+
+.icon-button:hover {
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.icon-image {
+    width: 40px; 
+    height: 40px; 
+}
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content.success {
+    background-color: rgba(35, 170, 35, 0.371);
+}
+
+.modal-content.danger {
+    background-color: rgba(215, 34, 34, 0.532);
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}

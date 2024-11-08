@@ -1,0 +1,416 @@
+@font-face {
+  font-family: 'fontd';
+  src: url('font/LexendZetta-ExtraLight.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('imagens/area.jpg'); 
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-position: center; 
+    color: #000000;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 80px auto;
+    grid-template-areas: 
+      "navbar navbar"
+      "sidebar content";
+    height: 100vh;
+    overflow: auto;
+  }
+
+  .navbar {
+    grid-area: navbar;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.47),
+    -10px -10px 5px #ffffffbd;
+    backdrop-filter: blur(6px);
+    z-index: 1;
+}
+
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: -1;
+}
+
+.navbar h1 {
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 8px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  font-family: fontd;
+  background: linear-gradient(to right, #ae1d1d9b, #ffffffb1); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.navbar .btn-back {
+  color: #d6d6d6;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease;
+  background: linear-gradient(145deg,#ffffff,#b6b3b3);
+  box-shadow:  0px 4px 10px #0000009e,
+              -20px -20px 60px #ffffff3c;
+  color: #000;
+  
+}
+
+.navbar .btn-back:hover {
+  background-color: #fff;
+  color:#ffffff;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #6a2121, #ff5252); 
+  
+}
+
+
+  .sidebar {
+    position: relative;
+    grid-area: sidebar;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow:0px 20px 20px rgba(193, 193, 193, 0.557);
+    backdrop-filter: blur(50px);
+    padding: 40px 20px;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+  .box {
+    position: sticky;
+    top: 25%;
+    z-index: 999;
+    padding: 30px;
+    transition: all 0.3s ease;
+    max-width: 100%;
+    border-radius: 1px 50px 1px 50px;
+    background-color: #0000007f;
+    background-size: cover;
+    color: white;
+    box-shadow: 5px 0 15px rgb(0, 0, 0);
+}
+.box:hover {
+    box-shadow: 0px 6px 20px rgb(0, 0, 0);
+    transform: translateY(-3px);
+}
+.box h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6); 
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+    -webkit-background-clip: text; 
+    background-clip: text; 
+}
+
+  .receipt-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.receipt-form label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #333;
+}
+
+.receipt-form input,
+.receipt-form select
+ {
+    
+  width: 100%;
+  position: relative;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #000;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  top: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .receipt-form textarea {
+      width: 100%;
+      resize: vertical;
+      width: 100%;
+      position: relative;
+      padding: 10px;
+      border-radius: 5px;
+      border: 2px solid #000;
+      font-size: 16px;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+      top: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .receipt-form textarea::-webkit-scrollbar {
+      width: 8px;
+  }
+  
+  .receipt-form textarea::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 4px;
+  }
+
+.receipt-form input:hover,
+.receipt-form select:hover,
+.receipt-form textarea:hover,
+.receipt-form input:focus,
+.receipt-form select:focus,
+.receipt-form textarea:focus {
+  border-color: #ff4d4d; 
+  outline: none; 
+  transform: scale(0.98);
+}
+
+.receipt-form button {
+  position: relative;
+  top: 10px;
+  padding: 15px 25px;
+  background: rgba(255, 255, 255, 0.6);
+  color: #000;
+  border: none;
+  border-radius: 30px;
+  border: 2px solid #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.receipt-form button:hover {
+  background: linear-gradient(145deg, #6a2121, #ff5252);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+.receipt-form button:active {
+  transform: scale(0.95); 
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2); 
+}
+
+@media (max-width: 600px) {
+    .receipt-form input,
+    .receipt-form select,
+    .receipt-form textarea,
+    .receipt-form button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+  .content {
+    grid-area: content;
+    padding: 40px;
+    background-color: #f1f1f1;
+    overflow-y: auto;
+  }
+
+
+
+  .receipt-output {
+    background-color: #f1f1f1;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .receipt-output h3 {
+    margin-bottom: 20px;
+    color: #0d7377;
+  }
+
+  .receipt-output p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    word-wrap: break-word;  
+    overflow-wrap: break-word; 
+    white-space: normal;     
+  }
+
+  .highlight {
+    font-weight: bold;
+    color: #ff4d4d; 
+    display: inline-block;  
+    max-width: 100%;        
+    word-wrap: break-word;   
+    overflow-wrap: break-word; 
+    white-space: normal;     
+  }
+
+  .receipt-output span {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .button-group button {
+    position: relative;
+    top: 10px;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.6);
+    color: #000;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .button-group button:hover {
+    background: linear-gradient(145deg, #6a2121, #ff5252);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #0d7377;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #426185;
+  }
+
+ 
+.logo-info-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+    border-radius: 20px;
+    border: 1px solid #ff4d4d; 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    font: 14px Consolas, monospace;
+    color: #000000; 
+    position: relative;
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+}
+
+.logo {
+    width: 100px;
+    position: relative;
+    left: 25px;
+    top: 15px;
+    height: 100px;
+    margin-right: 16px;
+    border: 2px solid #ff4d4d; 
+    background-color: white;
+    border-radius: 50px;
+}
+
+.tabela-empresa {
+  border-collapse: collapse;
+  width: auto;
+}
+
+.tabela-empresa td {
+  padding: 5px 10px;
+  vertical-align: top;
+}
+
+.tabela-empresa td:first-child {
+  font-weight: bold;
+  color: #ff4d4d; 
+}
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-btn {
+  background-color: #14ffec;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-btn:hover {
+  background-color: #0fbfb4;
+}
+
+

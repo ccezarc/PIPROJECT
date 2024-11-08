@@ -1,0 +1,328 @@
+@font-face {
+    font-family: 'fontd';
+    src: url('font/LexendZetta-ExtraLight.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #e3d8d6;
+    font-size: 16px;
+    background-image: url('imagens/area.jpg');
+    background-size: cover;
+
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 80px auto;
+    grid-template-areas: 
+        "navbar navbar"
+        "sidebar content";
+    overflow-y: auto;
+}
+
+
+.navbar {
+    grid-area: navbar;
+    background-size: cover;
+    background-color: transparent;
+    background-position: center;
+    position: relative;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.47),
+    -10px -10px 5px #ffffffbd;
+    backdrop-filter: blur(6px);
+    z-index: 1;
+}
+
+
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: -1;
+}
+
+.navbar h1 {
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 8px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    font-family: fontd;
+    background: linear-gradient(to right, #ae1d1d9b, #ffffffb1); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.profile-navbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color:  rgba(4, 45, 41, 0.751);
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-navbar img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.profile-navbar:hover {
+    background-color: #00574f;
+    color: #202124;
+}
+
+
+.sidebar {
+    position: relative;
+    grid-area: sidebar;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow:0px 30px 30px rgba(255, 255, 255, 0.301);
+    backdrop-filter: blur(50px);
+    padding: 40px 20px;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.img-side {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.btn {
+    position: relative;
+    width: 100%; 
+    max-width: 600px; 
+    padding: 15px 60px;
+    background: rgba(255, 255, 255, 0.6);
+    color: #000;
+    border: none;
+    margin-top: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background-color: #ff4d4d; 
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tag-premium {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    background-color: #ff4d4d; 
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    transform: translateY(-50%);
+    white-space: nowrap;
+}
+
+
+.content {
+    margin: 100px;
+    grid-area: content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+    justify-content: space-evenly; 
+    
+    max-height: 90vh;
+}
+
+.box {
+    background-color: #fff;
+    padding: 30px;
+    justify-content: center; 
+    align-items: start; 
+    border-radius: 50px 12px 80px 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.6);
+    
+}
+
+.client-box {
+    padding: 10px;
+    border: 1px solid #ccc; 
+    border-radius: 20px 5px 30px 5px;
+    margin-bottom: 10px;
+    cursor: pointer; 
+    transition: background-color 0.3s;
+}
+ul {
+    list-style-type: none;
+    padding: 0; 
+    margin: 0; 
+}
+
+.client-box:hover {
+    background-color: #f0f0f07c; 
+}
+
+.box:hover {
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.box h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #ff4d4d;
+}
+
+.drawer {
+    position: fixed;
+    left: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    border-radius: 50px 0px 50px 0;
+    background-color:  rgba(4, 45, 41, 0.551);
+    backdrop-filter: blur(8px);
+    color: white;
+    transition: left 0.3s ease;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    padding: 20px;
+}
+
+.drawer.open {
+    left: 288px;
+}
+
+.drawer h2 {
+    color: #ff4343;
+}
+
+.drawer p {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.drawer button {
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+    background-color: #ff4040;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.6);
+    transition: background-color 0.3s ease;
+    
+}
+
+.drawer button:hover {
+    background: rgba(255, 59, 59, 0.8);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #0d7377;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #426185;
+}
+
+.user-menu {
+    position: absolute;
+    top: 80px;
+    right: 30px;
+    width: 200px;
+    background-color:  rgba(4, 45, 41, 0.551);
+    backdrop-filter: blur(8px);
+    color: white;
+    border-radius: 30px 15px 40px 10px;
+    display: none; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 3;
+}
+
+.user-menu.open {
+    display: block;
+}
+
+.user-menu button {
+    display: block;
+    width: 100%;
+    
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.6);
+    border: none;
+    border-radius: 20px;
+    color: #000;
+    font-size: 16px;
+    text-align: center;
+    margin: 20px 0px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.user-menu button:hover {
+    background-color: #ff3f3f;
+    color: white;
+}
+
+footer {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.572);
+    box-shadow: 0px -4px 10px 5px rgba(0, 0, 0, 0.47);
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    backdrop-filter: blur(30px);
+    position: relative;
+}
+
+footer p {
+    
+    line-height: 1.6;
+}
